@@ -76,11 +76,15 @@ This template comes pre-configured with the highly useful **Barryvdh Laravel Deb
 - It is visible at the bottom of the screen when running locally (`APP_DEBUG=true`).
 - It helps you inspect database queries in real-time, view active routes, trace memory usage, dump values, and see Inertia.js shared props easily.
 
-## 🎥 Demo Video
+## 📸 Screenshots
 
-For a visual walkthrough of the template's features, including the authentication system, dashboard widgets, notification dropdowns, and the seamless CRUD module, please play the demo video below:
+Here is a visual walkthrough of the template's features:
 
-[▶️ Click Here to Watch the Demo Video](docs/demo.mp4)
+### 1. Login
+![Login](docs/Login.png)
 
-> **💡 Github Tip:**  
-> GitHub Markdown tidak selalu mendukung rendering `<video>` tag untuk file *relative local*. Agar video bisa menampilkan *player* otomatis di halaman repositori Anda, *edit* README ini melalui web GitHub, hapus baris di atas, lalu *Drag & Drop* file `docs/demo.mp4` langsung ke dalam editor. GitHub akan meng-generate URL khusus yang otomatis menjadi video player.
+### 2. Dashboard
+![Dashboard](docs/Dashboard.png)
+
+### 3. CRUD Manager
+![CRUD Manager](docs/CRUD.png)
