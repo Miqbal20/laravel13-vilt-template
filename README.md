@@ -80,7 +80,7 @@ This template comes pre-configured with the highly useful **Barryvdh Laravel Deb
 
 For a visual walkthrough of the template's features, including the authentication system, dashboard widgets, notification dropdowns, and the seamless CRUD module, please play the demo video below:
 
-<video width="100%" controls>
-  <source src="docs/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[▶️ Click Here to Watch the Demo Video](docs/demo.mp4)
+
+> **💡 Github Tip:**  
+> GitHub Markdown tidak selalu mendukung rendering `<video>` tag untuk file *relative local*. Agar video bisa menampilkan *player* otomatis di halaman repositori Anda, *edit* README ini melalui web GitHub, hapus baris di atas, lalu *Drag & Drop* file `docs/demo.mp4` langsung ke dalam editor. GitHub akan meng-generate URL khusus yang otomatis menjadi video player.
