@@ -1,58 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel 13 VILT Template
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern and modular administration dashboard template built with the robust VILT stack. Designed for high performance and rapid application development processing.
 
-## About Laravel
+## 🚀 Tech Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project utilizes the following core technologies:
+- **[Laravel 13](https://laravel.com/)**: The core PHP framework handling the backend logic, authentication, and routing.
+- **[Vue.js 3](https://vuejs.org/)**: The reactive frontend framework using the modern Composition API (`<script setup>`).
+- **[Inertia.js](https://inertiajs.com/)**: The monolith glue that acts as the router and allows Vue to seamlessly communicate with the server without building an API layer.
+- **[Tailwind CSS v4](https://tailwindcss.com/)**: Utility-first CSS framework for rapid and highly customizable UI styling.
+- **[SweetAlert2](https://sweetalert2.github.io/)**: Used globally for elegant, beautiful popup notifications, flash messages, and user interaction confirmations.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📥 Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Follow these steps to set up the project locally after cloning the repository:
 
-## Learning Laravel
+1. **Install PHP Dependencies**:
+   ```bash
+   composer install
+   ```
+2. **Install Node.js Dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Environment Setup**:
+   Copy the `.env.example` file to `.env` and configure your credentials:
+   ```bash
+   cp .env.example .env
+   ```
+4. **Generate Application Key**:
+   ```bash
+   php artisan key:generate
+   ```
+5. **Run Migrations & Seed the Database**:
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+   **Default Login Credentials:**
+   - Email: `test@example.com`
+   - Password: `password`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🐳 Database setup using Docker (Optional but Recommended)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+For an isolated, zero-dependency database layer, a `docker-compose-db.yml` file is provided which spins up a **MySQL 8.0** instance alongside **phpMyAdmin**:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+1. Start the Docker containers attached to the project:
+   ```bash
+   docker compose -f docker-compose-db.yml up -d
+   ```
+2. Once the container is running, ensure your `.env` connects to `127.0.0.1` on port `3306` with the credentials specified in the compose file (default DB: `laravel`, User: `laravel`, Pass: `secret`).
+3. Run migrations to build the necessary tables (including the `Customer` and `Users` table):
+   ```bash
+   php artisan migrate
+   ```
+   *(Optionally add `--seed` if you have database seeders prepared)*
 
-## Agentic Development
+## 🏃‍♂️ Running the Application
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+To run the application locally, you will need two terminal tabs executing simultaneously:
 
-```bash
-composer require laravel/boost --dev
+1. **Start the Laravel backend server**:
+   ```bash
+   php artisan serve
+   ```
+   *(This generally runs on `http://localhost:8000`)*
 
-php artisan boost:install
-```
+2. **Start the Vite frontend development server**:
+   ```bash
+   npm run dev
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 🐞 Debugging Setup
 
-## Contributing
+This template comes pre-configured with the highly useful **Barryvdh Laravel Debugbar** for development environments.
+- It is visible at the bottom of the screen when running locally (`APP_DEBUG=true`).
+- It helps you inspect database queries in real-time, view active routes, trace memory usage, dump values, and see Inertia.js shared props easily.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🎥 Demo Video
 
-## Code of Conduct
+For a visual walkthrough of the template's features, including the authentication system, dashboard widgets, notification dropdowns, and the seamless CRUD module, please play the demo video below:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<video width="100%" controls>
+  <source src="docs/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>

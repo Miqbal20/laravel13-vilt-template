@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -14,5 +15,6 @@ Route::middleware('guest')->group(function () {
 /* Authenticated routes */
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard');
+    Route::resource('customers', CustomerController::class)->except(['create', 'show', 'edit']);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

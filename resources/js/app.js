@@ -5,7 +5,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from 'ziggy-js';
 
 createInertiaApp({
-    title: (title) => title ? `${title} — AdminKit` : 'AdminKit',
+    title: (title) => title ? `${title} — Admin-Miqbal20` : 'Admin-Miqbal20',
     resolve: (name) =>
         resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {

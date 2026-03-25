@@ -1,19 +1,15 @@
 <template>
     <div class="flex min-h-screen">
         <!-- Left panel -->
-        <section
-            id="login-left"
-            class="w-[45%] bg-[#0f2044] flex flex-col justify-center items-start px-14 py-16 relative overflow-hidden"
-        >
+        <section id="login-left"
+            class="w-[45%] bg-[#0f2044] flex flex-col justify-center items-start px-14 py-16 relative overflow-hidden">
             <!-- Decorative blobs -->
-            <div
-                class="absolute w-[400px] h-[400px] rounded-full pointer-events-none"
-                style="background: radial-gradient(circle, rgba(37,99,235,.35) 0%, transparent 70%); top: -80px; right: -100px"
-            ></div>
-            <div
-                class="absolute w-[300px] h-[300px] rounded-full pointer-events-none"
-                style="background: radial-gradient(circle, rgba(56,189,248,.2) 0%, transparent 70%); bottom: -60px; left: -60px"
-            ></div>
+            <div class="absolute w-[400px] h-[400px] rounded-full pointer-events-none"
+                style="background: radial-gradient(circle, rgba(37,99,235,.35) 0%, transparent 70%); top: -80px; right: -100px">
+            </div>
+            <div class="absolute w-[300px] h-[300px] rounded-full pointer-events-none"
+                style="background: radial-gradient(circle, rgba(56,189,248,.2) 0%, transparent 70%); bottom: -60px; left: -60px">
+            </div>
 
             <!-- Brand -->
             <div class="flex items-center gap-2.5 mb-14 relative z-10">
@@ -25,7 +21,7 @@
                         <rect x="14" y="14" width="7" height="7" rx="1" />
                     </svg>
                 </div>
-                <span class="font-sora font-bold text-[22px] text-white tracking-tight">AdminKit</span>
+                <span class="font-sora font-bold text-[22px] text-white tracking-tight">Admin (Miqbal20)</span>
             </div>
 
             <!-- Tagline -->
@@ -56,15 +52,10 @@
                         <label class="block text-[13px] font-medium text-slate-900 mb-1.5" for="email">
                             Email address
                         </label>
-                        <input
-                            id="email"
-                            v-model="form.email"
-                            type="email"
-                            autocomplete="username"
+                        <input id="email" v-model="form.email" type="email" autocomplete="username"
                             placeholder="admin@example.com"
                             class="w-full px-4 py-[11px] border-[1.5px] rounded-[10px] text-sm text-slate-900 bg-slate-50 outline-none transition"
-                            :class="form.errors.email ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] focus:bg-white'"
-                        />
+                            :class="form.errors.email ? 'border-red-400 focus:border-red-500' : 'border-slate-200 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] focus:bg-white'" />
                         <p v-if="form.errors.email" class="mt-1.5 text-xs text-red-500">{{ form.errors.email }}</p>
                     </div>
 
@@ -73,16 +64,12 @@
                         <label class="block text-[13px] font-medium text-slate-900 mb-1.5" for="password">
                             Password
                         </label>
-                        <input
-                            id="password"
-                            v-model="form.password"
-                            type="password"
-                            autocomplete="current-password"
+                        <input id="password" v-model="form.password" type="password" autocomplete="current-password"
                             placeholder="••••••••"
                             class="w-full px-4 py-[11px] border-[1.5px] rounded-[10px] text-sm text-slate-900 bg-slate-50 outline-none transition"
-                            :class="form.errors.password ? 'border-red-400' : 'border-slate-200 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] focus:bg-white'"
-                        />
-                        <p v-if="form.errors.password" class="mt-1.5 text-xs text-red-500">{{ form.errors.password }}</p>
+                            :class="form.errors.password ? 'border-red-400' : 'border-slate-200 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] focus:bg-white'" />
+                        <p v-if="form.errors.password" class="mt-1.5 text-xs text-red-500">{{ form.errors.password }}
+                        </p>
                     </div>
 
                     <!-- Remember / Forgot -->
@@ -94,11 +81,8 @@
                         <a href="#" class="text-[13px] text-blue-600 font-medium hover:underline">Forgot password?</a>
                     </div>
 
-                    <button
-                        type="submit"
-                        :disabled="form.processing"
-                        class="w-full py-[13px] bg-blue-600 text-white border-none rounded-[10px] text-[15px] font-semibold font-sora tracking-wide shadow-[0_4px_14px_rgba(37,99,235,0.35)] transition cursor-pointer hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)] active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
+                    <button type="submit" :disabled="form.processing"
+                        class="w-full py-[13px] bg-blue-600 text-white border-none rounded-[10px] text-[15px] font-semibold font-sora tracking-wide shadow-[0_4px_14px_rgba(37,99,235,0.35)] transition cursor-pointer hover:bg-blue-700 hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)] active:scale-[0.985] disabled:opacity-60 disabled:cursor-not-allowed">
                         {{ form.processing ? 'Signing in…' : 'Sign in to Dashboard' }}
                     </button>
                 </form>
